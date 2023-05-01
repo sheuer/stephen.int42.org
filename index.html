@@ -13,6 +13,7 @@
       font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size: 17px;
       color: #333;
+      background: #f2f0f3;
     }
     main {
       padding: 1rem;
@@ -24,6 +25,20 @@
       position: relative;
       text-align: justify;
     }
+    a {
+      color: #0074d9;
+      text-decoration: underline;
+    }
+
+    .mode-dark {
+      display: none;
+    }
+
+    .mode-light {
+      display: initial;
+    }
+
+
     #cars-r-coffins {
       rotate: -20deg;
       width: 8rem;
@@ -111,8 +126,8 @@
       line-height: 2.15rem;
       padding: 0.25rem;
       margin: 0.25rem 0.5rem 0 0.25rem;
-      color: #8f679a;
-      border: solid 1px #8f679a;
+      color: #6e3d7b;
+      border: solid 1px #6e3d7b;
       border-radius: 0.25rem;
     }
 
@@ -125,11 +140,7 @@
       color: #666;
     }
 
-    @media (max-width:480px)  {
-      section {
-        width: 90%;
-      }
-
+    @media (max-width:700px)  {
       #spaceballs {
         left: unset;
         right: -12rem;
@@ -140,18 +151,19 @@
       #arux {
         left: unset;
         right: -9.5rem;
-        top: 3rem;
+        top: 4rem;
       }
 
       #fund-busses {
         left: unset;
         right: -14rem;
-        top: 15%;
+        top: 18%;
       }
 
       #the-war-on-cars {
         left: unset;
         right: -8rem;
+        top: 33%;
       }
 
       #cars-r-coffins {
@@ -159,6 +171,50 @@
         right: -10rem;
         rotate: 0deg;
         bottom: 30%;
+      }
+    }
+
+    @media (max-width:550px)  {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      section {
+        width: 90%;
+      }
+
+      #arux {
+        top: 6rem;
+        rotate: -13deg;
+      }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #16011c;
+        color: #fff;
+      }
+      a {
+        color: #5ab2ff;
+      }
+      p::first-letter {
+        color: #e8b4f7;
+        border: solid 1px #e8b4f7;
+      }
+      #cars-r-coffins img {
+        filter: invert(100%);
+      }
+
+      .mode-dark {
+        display: initial;
+      }
+
+      .mode-light {
+        display: none;
+      }
+
+      #mess {
+        color: #888;
       }
     }
   </style>
@@ -224,7 +280,8 @@
         <a href="https://en.wikipedia.org/wiki/Spaceballs" target="_blank" rel=”noopener”><image src="images/spaceballs.webp"></a>
       </div>
       <div id="arux">
-        <a href="https://arux.software" target="_blank" rel=”noopener”><image src="images/arux.webp"></a>
+        <a href="https://arux.software" target="_blank" rel=”noopener”><image src="images/arux.webp" class="mode-light"></a>
+        <a href="https://arux.software" target="_blank" rel=”noopener”><image src="images/arux-white.webp" class="mode-dark"></a>
       </div>
 
       <div id="macintosh-512k">
